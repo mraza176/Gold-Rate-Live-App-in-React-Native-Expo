@@ -1,16 +1,17 @@
 {
   "expo": {
-    "name": "gold-rate-live",
+    "name": "Gold Rate Live",
     "slug": "gold-rate-live",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "scheme": "goldratelive",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#08090c"
     },
     "ios": {
       "supportsTablet": true
@@ -18,12 +19,18 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#08090c"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "website.razadev.goldratelive"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "df9fbb28-c1f6-47ac-a86b-07ac6356020b"
+      }
     }
   }
 }
