@@ -11,7 +11,7 @@ export default function LiveMarketScreen() {
 
   async function fetchData() {
     try {
-      const response = await axios.get(process.env.EXPO_PUBLIC_GOLD_RATE_API!);
+      const response = await axios.get(process.env.EXPO_PUBLIC_GOLD_RATE_API);
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

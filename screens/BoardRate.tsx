@@ -11,7 +11,7 @@ export default function BoardRateScreen() {
 
   async function fetchData() {
     try {
-      const response = await axios.get(process.env.EXPO_PUBLIC_BOARD_RATE_API!);
+      const response = await axios.get(process.env.EXPO_PUBLIC_BOARD_RATE_API);
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

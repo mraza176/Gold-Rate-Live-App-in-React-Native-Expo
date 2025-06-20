@@ -10,7 +10,7 @@ type DataType = {
 };
 
 export type CardType = {
-  title: string;
+  title?: string;
   headings: string[];
   data: DataType[];
   updatedAt?: string;
@@ -51,4 +51,22 @@ export type BoardRateData = {
   _22ktBuy10: string;
   _22ktSell10: string;
   rateUpdateTime: string;
+};
+
+export type CurrencyRateData = {
+  dollarInterBankBuy: string;
+  dollarInterBankSell: string;
+  dollarBuy: string;
+  dollarSell: string;
+  gbpBuy: string;
+  gbpSell: string;
+  euroBuy: string;
+  euroSell: string;
+  malayBuy: string;
+  malaySell: string;
+  riyalBuy: string;
+  riyalSell: string;
+  dirhamBuy: string;
+  dirhamSell: string;
+  dollarUpdateTime: string;
 };
