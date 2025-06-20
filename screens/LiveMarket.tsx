@@ -1,21 +1,24 @@
 import { Fragment, useEffect, useState } from "react";
-import { ScrollView, ToastAndroid } from "react-native";
+import { ScrollView } from "react-native";
 import { GoldRateData } from "@/types";
 import { colors } from "@/constants/theme";
 import axios from "axios";
 import Card from "@/components/Card";
 import Header from "@/components/Header";
+import ErrorToast from "@/components/ErrorToast";
 
 export default function LiveMarketScreen() {
   const [data, setData] = useState<GoldRateData>();
+  const [success, setSuccess] = useState<boolean>(false);
 
   async function fetchData() {
     try {
       const response = await axios.get(process.env.EXPO_PUBLIC_GOLD_RATE_API);
       setData(response.data);
+      setSuccess(true);
     } catch (error) {
       console.error("Error fetching data:", error);
-      ToastAndroid.show("انٹرنیٹ کنکشن چیک کریں", ToastAndroid.SHORT);
+      setSuccess(false);
     }
   }
 
@@ -105,6 +108,7 @@ export default function LiveMarketScreen() {
           ]}
         />
       </ScrollView>
+      {!success && <ErrorToast />}
     </Fragment>
   );
 }
